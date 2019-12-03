@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 
 import AppContext from '../context/app-context';
+import { fetchMoviesFromDB } from '../services/themoviedb-api';
 
-const FetchTweet = () => {
+const FetchMovies = () => {
     const { dispatchKeywords } = useContext(AppContext);
 
     const [input, setInput] = useState('');
@@ -14,8 +15,9 @@ const FetchTweet = () => {
         }
     }
 
-    const fetchTweets = () => {
+    const fetchMovies = () => {
         setLoading(true);
+        fetchMoviesFromDB(input);
         setTimeout(() => {
             dispatchKeywords({ type: 'ADD_KEYWORD', keyword: input });
             setLoading(false);
@@ -26,9 +28,9 @@ const FetchTweet = () => {
         <>
             {/* Ask user to enter keywords (5 max)  */}
             <input value={input} onChange={onChange}></input>
-            <button disabled={loading} onClick={fetchTweets}>Fetch tweets</button>
+            <button disabled={loading} onClick={fetchMovies}>Fetch Movies</button>
         </>
     );
 }
 
-export { FetchTweet as default }
+export { FetchMovies as default }
