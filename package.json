@@ -34,6 +34,12 @@
     ]
   },
   "devDependencies": {
+    "enzyme-to-json": "^3.4.3",
     "jest": "^24.9.0"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

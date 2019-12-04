@@ -41,7 +41,7 @@ const FetchMovies = () => {
         <>
             {/* Ask user to enter keywords (5 max)  */}
             <input maxLength="5" value={input} onChange={onChange}></input>
-            <button disabled={loading} onClick={fetchMovies}>Fetch Movies</button>
+            <button disabled={loading || input.length < 1} onClick={fetchMovies}>Fetch Movies</button>
             {error && (<div>
                 {error}
             </div>)}

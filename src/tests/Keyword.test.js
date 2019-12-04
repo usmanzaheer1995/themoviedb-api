@@ -2,14 +2,11 @@
 
 import { shallow } from 'enzyme';
 import React from 'react';
+import toJson from 'enzyme-to-json';
 
 import Keyword from '../components/Keyword';
 
 test('should render Keyword correctly', () => {
-    console.log('testing');
-    const wrapper = shallow(<Keyword keyword={"Test keyword"}/>);
-    expect(wrapper.find('li').length).toBe(1);
-    // const renderer = new ReactShallowRenderer();
-    // renderer.render(<Keyword keyword={"Test keyword"}/>);
-    // expect(renderer.getRenderOutput()).toMatchSnapshot();
+    const wrapper = shallow(<Keyword keyword={"Test keyword"} />);
+    expect(wrapper).toMatchSnapshot();
 });
