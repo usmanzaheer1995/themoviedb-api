@@ -6,6 +6,7 @@ import React from 'react';
 import Keyword from '../components/Keyword';
 
 test('should render Keyword correctly', () => {
+    console.log('testing');
     const wrapper = shallow(<Keyword keyword={"Test keyword"}/>);
     expect(wrapper.find('li').length).toBe(1);
     // const renderer = new ReactShallowRenderer();
