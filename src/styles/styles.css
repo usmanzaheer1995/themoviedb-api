@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+.movies-container {
+    flex-basis: 40%;
+}
+
+.genre-list {
+    list-style: none;
+    padding: 0;
+}
+
+.genre-list > li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+.movies-listing {
+    display: flex;
+}
+
+.keywords-container {
+    max-height: 25rem;
+    overflow: auto;
+    flex-basis: 20%;
+}

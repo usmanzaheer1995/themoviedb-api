@@ -6,10 +6,10 @@ import Keyword from './Keyword'
 const KeywordList = () => {
     const { keywords } = useContext(AppContext);
     return (
-        <div>
+        <div className="keywords-container">
             {keywords.length > 0 && <h3>Recent keywords</h3>}
             {keywords.map((item) => (
-                <Keyword key={item} keyword={item} />
+                <Keyword key={item.uuid} keyword={item.keyword} />
             ))}
         </div>
     );

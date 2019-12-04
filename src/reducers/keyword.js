@@ -5,7 +5,10 @@ const keywordReducer = (state, action) => {
         case 'ADD_KEYWORD':
             return [
                 ...state,
-                action.keyword,
+                {
+                    uuid: action.uuid,
+                    keyword: action.keyword
+                }
             ];
         default:
             return state;
